@@ -501,12 +501,24 @@ selnormalize(void)
 }
 
 int
+has_content_forward(int x, int y)
+{
+	int nx;
+	for (nx = x; nx < term.col; ++nx)
+		if (term.line[y][nx].u != '\n' && term.line[y][nx].u != ' ')
+			return 1;
+	return 0;
+}
+
+
+int
 selected(int x, int y)
 {
 	if (sel.mode == SEL_EMPTY || sel.ob.x == -1 ||
 			sel.alt != IS_SET(MODE_ALTSCREEN))
 		return 0;
-
+  if (!has_content_forward(x, y))
+  	return 0;
 	if (sel.type == SEL_RECTANGULAR)
 		return BETWEEN(y, sel.nb.y, sel.ne.y)
 		    && BETWEEN(x, sel.nb.x, sel.ne.x);

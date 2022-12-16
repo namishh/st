@@ -9,7 +9,7 @@ static char *font = "Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true
 static char *font2[] = {
   "Noto Color Emoji:pixelsize=20:antialias=true:autohint=true"
 };
-static int borderpx = 2;
+static int borderpx = 8;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -113,27 +113,27 @@ float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#212126", /* black   */
-	"#da696d", /* red     */
-  "#74be88", /* green   */
-	"#e1b56a", /* yellow  */
-	"#6d92b7", /* blue    */
-	"#be67d5", /* magenta */
-	"#679ca6", /* cyan    */
-	"#b9c1c1", /* white   */
+	"#1b1b1b", /* black   */
+	"#af575b", /* red     */
+  "#7d8a6b", /* green   */
+	"#caac79", /* yellow  */
+	"#7d95ae", /* blue    */
+	"#a07ea7", /* magenta */
+	"#6b8f8a", /* cyan    */
+	"#b7b7b7", /* white   */
 
-	"#28292f", /* black   */
-	"#ec6e74", /* red     */
-	"#86d19a", /* green   */
-	"#d4b27c", /* yellow  */
-	"#6692bf", /* blue    */
-	"#c585cf", /* magenta */
-	"#6bd1e0", /* cyan    */
-	"#ccc9c3", /* white   */
+	"#272727", /* black   */
+	"#c15a5e", /* red     */
+	"#8fa176", /* green   */
+	"#d8b170", /* yellow  */
+	"#809fbe", /* blue    */
+	"#b183ba", /* magenta */
+	"#8cb5af", /* cyan    */
+	"#d4d5d5", /* white   */
 
   [255] = 0,
-	"#ccc9c3", /* default foreground colour */
-	"#0f0f0f", /* default background colour */
+	"#dbdfdf", /* default foreground colour */
+	"#121111", /* default background colour */
   "#28292f",
 };
 
