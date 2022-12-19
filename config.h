@@ -7,9 +7,10 @@
  */
 static char *font = "Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = {
-  "Noto Color Emoji:pixelsize=20:antialias=true:autohint=true"
+  "Noto Color Emoji:pixelsize=20:antialias=true:autohint=true",
+  "Material Design Icons Desktop:pixelsize=19"
 };
-static int borderpx = 8;
+static int borderpx = 16;
 
 /*
  * What program is execed by st depends of these precedence rules:
