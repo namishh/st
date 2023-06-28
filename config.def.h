@@ -8,8 +8,7 @@
 static char *font =
     "Iosevka Nerd Font:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = {
-    "Noto Color Emoji:pixelsize=20:antialias=true:autohint=true",
-    "Material Design Icons Desktop:pixelsize=19"};
+    "Noto Color Emoji:pixelsize=20:antialias=true:autohint=true"};
 static int borderpx = 0;
 
 /*
