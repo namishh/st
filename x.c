@@ -694,10 +694,6 @@ void cresize(int width, int height) {
 void xresize(int col, int row) {
   win.tw = col * win.cw;
   win.th = row * win.ch;
-
-  XFreePixmap(xw.dpy, xw.buf);
-  xw.buf = XCreatePixmap(xw.dpy, xw.win, win.w, win.h, xw.depth);
-  XftDrawChange(xw.draw, xw.buf);
   xclear(0, 0, win.w, win.h);
 
   /* resize to new width */
@@ -1190,7 +1186,7 @@ void xinit(int cols, int rows) {
 
   memset(&gcvalues, 0, sizeof(gcvalues));
   gcvalues.graphics_exposures = False;
-  xw.buf = XCreatePixmap(xw.dpy, xw.win, win.w, win.h, xw.depth);
+  xw.buf = xw.win;
   dc.gc = XCreateGC(xw.dpy, xw.buf, GCGraphicsExposures, &gcvalues);
   XSetForeground(xw.dpy, dc.gc, dc.col[defaultbg].pixel);
   XFillRectangle(xw.dpy, xw.buf, dc.gc, 0, 0, win.w, win.h);
@@ -1675,7 +1671,6 @@ void xdrawline(Line line, int x1, int y1, int x2) {
 }
 
 void xfinishdraw(void) {
-  XCopyArea(xw.dpy, xw.buf, xw.win, dc.gc, 0, 0, win.w, win.h, 0, 0);
   XSetForeground(xw.dpy, dc.gc,
                  dc.col[IS_SET(MODE_REVERSE) ? defaultfg : defaultbg].pixel);
 }
