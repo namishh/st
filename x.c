@@ -1632,7 +1632,11 @@ void xsettitle(char *p) {
   XFree(prop.value);
 }
 
-int xstartdraw(void) { return IS_SET(MODE_VISIBLE); }
+int xstartdraw(void) { 
+  if (IS_SET(MODE_VISIBLE))
+		 XCopyArea(xw.dpy, xw.win, xw.buf, dc.gc, 0, 0, win.w, win.h, 0, 0);
+  return IS_SET(MODE_VISIBLE); 
+}
 
 void xdrawline(Line line, int x1, int y1, int x2) {
   int i, x, ox, numspecs, numspecs_cached;
